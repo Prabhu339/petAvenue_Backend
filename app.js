@@ -8,6 +8,9 @@ const jwt=require("jsonwebtoken")
 const users=require("./Model/userModel")
 const authMiddle=require("./router/authMiddleware")
 
+
+const port=4000 || process.env.port;
+
 const enquiriesModel=require("./Model/enquiriesModel")
 const BookModel=require("./Model/BookModel")
 const StayModel=require("./Model/StayModel")
@@ -86,6 +89,6 @@ app.get("/dashboard", authMiddle,async (req,res)=>{
     
 })
 
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log('server is running on port 4000')
 })
